@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2015 03:50:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Classes.Location" table="LOCATION" schema="TRD157_28" optimistic-lock="version">
+        <id name="idlocation" type="big_decimal">
+            <column name="IDLOCATION" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="membre" class="Classes.Membre" fetch="select">
+            <column name="IDMEMBRE" precision="22" scale="0" />
+        </many-to-one>
+        <many-to-one name="film" class="Classes.Film" fetch="select">
+            <column name="IDFILM" precision="22" scale="0" />
+        </many-to-one>
+        <property name="datelocation" type="date">
+            <column name="DATELOCATION" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

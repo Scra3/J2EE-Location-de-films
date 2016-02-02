@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+    <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
+    <property name="hibernate.connection.url">jdbc:oracle:thin:@//dim-oracle.uqac.ca:1521/dimdb.uqac.ca</property>
+    <property name="hibernate.connection.username">trd157_28</property>
+    <property name="hibernate.connection.password">Z?EqVJ57TZrm</property>
+    <mapping resource="Classes/Pays.hbm.xml"/>
+    <mapping resource="Classes/Client.hbm.xml"/>
+    <mapping resource="Classes/Scenariste.hbm.xml"/>
+    <mapping resource="Classes/Annonce.hbm.xml"/>
+    <mapping resource="Classes/Adresse.hbm.xml"/>
+    <mapping resource="Classes/Infocredit.hbm.xml"/>
+    <mapping resource="Classes/Film.hbm.xml"/>
+    <mapping resource="Classes/Realisateur.hbm.xml"/>
+    <mapping resource="Classes/Forfait.hbm.xml"/>
+    <mapping resource="Classes/Employe.hbm.xml"/>
+    <mapping resource="Classes/Acteurfilm.hbm.xml"/>
+    <mapping resource="Classes/Genre.hbm.xml"/>
+    <mapping resource="Classes/Acteur.hbm.xml"/>
+    <mapping resource="Classes/Membre.hbm.xml"/>
+    <mapping resource="Classes/Location.hbm.xml"/>
+    <mapping resource="Classes/Filmpays.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

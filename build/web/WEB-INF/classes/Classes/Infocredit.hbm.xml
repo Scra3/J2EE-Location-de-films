@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2015 03:50:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Classes.Infocredit" table="INFOCREDIT" schema="TRD157_28" optimistic-lock="version">
+        <id name="idmembre" type="big_decimal">
+            <column name="IDMEMBRE" precision="22" scale="0" />
+            <generator class="foreign">
+                <param name="property">client</param>
+            </generator>
+        </id>
+        <one-to-one name="client" class="Classes.Client" constrained="true"></one-to-one>
+        <property name="carte" type="string">
+            <column name="CARTE" length="50" />
+        </property>
+        <property name="no" type="string">
+            <column name="NO" length="40" />
+        </property>
+        <property name="expmois" type="big_decimal">
+            <column name="EXPMOIS" precision="22" scale="0" />
+        </property>
+        <property name="expannee" type="big_decimal">
+            <column name="EXPANNEE" precision="22" scale="0" />
+        </property>
+        <property name="cvv" type="big_decimal">
+            <column name="CVV" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

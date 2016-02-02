@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2015 03:50:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Classes.Membre" table="MEMBRE" schema="TRD157_28" optimistic-lock="version">
+        <id name="idmembre" type="big_decimal">
+            <column name="IDMEMBRE" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomfamille" type="string">
+            <column name="NOMFAMILLE" length="50" />
+        </property>
+        <property name="prenom" type="string">
+            <column name="PRENOM" length="50" />
+        </property>
+        <property name="courriel" type="string">
+            <column name="COURRIEL" length="65" unique="true" />
+        </property>
+        <property name="tel" type="string">
+            <column name="TEL" length="25" />
+        </property>
+        <property name="anniversaire" type="date">
+            <column name="ANNIVERSAIRE" length="7" />
+        </property>
+        <property name="motdepasse" type="string">
+            <column name="MOTDEPASSE" length="50" />
+        </property>
+        <set name="locations" table="LOCATION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDMEMBRE" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Classes.Location" />
+        </set>
+        <one-to-one name="employe" class="Classes.Employe"></one-to-one>
+        <one-to-one name="client" class="Classes.Client"></one-to-one>
+        <one-to-one name="adresse" class="Classes.Adresse"></one-to-one>
+    </class>
+</hibernate-mapping>

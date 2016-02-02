@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-schema="TRD157_28"/>
+  <table-filter match-name="ANNONCE"/>
+  <table-filter match-name="GENRE"/>
+  <table-filter match-name="ACTEUR"/>
+  <table-filter match-name="EMPLOYE"/>
+  <table-filter match-name="FORFAIT"/>
+  <table-filter match-name="PAYS"/>
+  <table-filter match-name="FILMPAYS"/>
+  <table-filter match-name="ADRESSE"/>
+  <table-filter match-name="SCENARISTE"/>
+  <table-filter match-name="REALISATEUR"/>
+  <table-filter match-name="MEMBRE"/>
+  <table-filter match-name="CLIENT"/>
+  <table-filter match-name="FILM"/>
+  <table-filter match-name="FILMPAYS"/>
+  <table-filter match-name="LOCATION"/>
+  <table-filter match-name="INFOCREDIT"/>
+  <table-filter match-name="ACTEURFILM"/>
+</hibernate-reverse-engineering>

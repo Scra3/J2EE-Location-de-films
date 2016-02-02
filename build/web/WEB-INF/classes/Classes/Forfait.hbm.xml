@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2015 03:50:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Classes.Forfait" table="FORFAIT" schema="TRD157_28" optimistic-lock="version">
+        <id name="idforfait" type="big_decimal">
+            <column name="IDFORFAIT" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="string">
+            <column name="NOM" unique="true" />
+        </property>
+        <property name="cout" type="java.lang.Double">
+            <column name="COUT" precision="126" scale="0" />
+        </property>
+        <property name="locationmaximale" type="big_decimal">
+            <column name="LOCATIONMAXIMALE" precision="22" scale="0" />
+        </property>
+        <property name="duree" type="big_decimal">
+            <column name="DUREE" precision="22" scale="0" />
+        </property>
+        <set name="clients" table="CLIENT" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDFORFAIT" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Classes.Client" />
+        </set>
+    </class>
+</hibernate-mapping>

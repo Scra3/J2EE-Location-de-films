@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2015 03:50:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Classes.Realisateur" table="REALISATEUR" schema="TRD157_28" optimistic-lock="version">
+        <id name="idrealisateur" type="big_decimal">
+            <column name="IDREALISATEUR" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="string">
+            <column name="NOM" length="70" />
+        </property>
+        <property name="anniversaire" type="date">
+            <column name="ANNIVERSAIRE" length="7" />
+        </property>
+        <property name="lieu" type="string">
+            <column name="LIEU" length="70" />
+        </property>
+        <property name="photo" type="string">
+            <column name="PHOTO" />
+        </property>
+        <property name="bio" type="string">
+            <column name="BIO" />
+        </property>
+        <set name="films" table="FILM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDREALISATEUR" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Classes.Film" />
+        </set>
+    </class>
+</hibernate-mapping>

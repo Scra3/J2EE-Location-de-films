@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2015 03:50:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Classes.Genre" table="GENRE" schema="TRD157_28" optimistic-lock="version">
+        <id name="idgenre" type="big_decimal">
+            <column name="IDGENRE" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="genre" type="string">
+            <column name="GENRE" length="50" unique="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 d?c. 2015 03:50:33 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="Classes.Film" table="FILM" schema="TRD157_28" optimistic-lock="version">
+        <id name="idfilm" type="big_decimal">
+            <column name="IDFILM" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="realisateur" class="Classes.Realisateur" fetch="select">
+            <column name="IDREALISATEUR" precision="22" scale="0" />
+        </many-to-one>
+        <property name="titre" type="string">
+            <column name="TITRE" length="90" />
+        </property>
+        <property name="annee" type="big_decimal">
+            <column name="ANNEE" precision="22" scale="0" />
+        </property>
+        <property name="langue" type="string">
+            <column name="LANGUE" length="40" />
+        </property>
+        <property name="duree" type="big_decimal">
+            <column name="DUREE" precision="22" scale="0" />
+        </property>
+        <property name="resume" type="string">
+            <column name="RESUME" />
+        </property>
+        <property name="poster" type="string">
+            <column name="POSTER" />
+        </property>
+        <property name="qtestock" type="big_decimal">
+            <column name="QTESTOCK" precision="22" scale="0" />
+        </property>
+        <property name="qtestockmax" type="big_decimal">
+            <column name="QTESTOCKMAX" precision="22" scale="0" />
+        </property> 
+        <set name="annonces" table="ANNONCE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDFILM" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Classes.Annonce" />
+        </set>
+        <set name="scenaristes" table="SCENARISTE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDFILM" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Classes.Scenariste" />
+        </set>
+        <set name="acteurfilms" table="ACTEURFILM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDFILM" precision="22" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="Classes.Acteurfilm" />
+        </set>
+        <set name="locations" table="LOCATION" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="IDFILM" precision="22" scale="0" />
+            </key>
+            <one-to-many class="Classes.Location" />
+        </set>
+        <set name="payses" table="FILMPAYS" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="IDFILM" precision="22" scale="0" not-null="true" />
+            </key>
+            <many-to-many entity-name="Classes.Pays">
+                <column name="IDPAYS" precision="22" scale="0" not-null="true" />
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
